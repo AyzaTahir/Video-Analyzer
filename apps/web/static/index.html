@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidlytics — AI-Powered Video Intelligence at Scale</title>
+    <meta name="description" content="Vidlytics is the AI-powered video intelligence platform that ingests, transcribes with sub-50ms latency, and structures your media into chapters, steps, and highlights automatically.">
+    <style>
+        /* Brand gradient utilities */
+        .logo-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .logo-svg-gradient stop:first-child { stop-color: #6366f1; }
+        .logo-svg-gradient stop:last-child  { stop-color: #d946ef; }
+        .hero-title-highlight {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 40%, #ec4899 80%, #f59e0b 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        @keyframes gradientShift {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .logo-wrapper .logo-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        /* Glowing CTA button */
+        .btn-primary.btn-glow {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #d946ef);
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease infinite;
+            border: none;
+            box-shadow: 0 4px 24px rgba(139, 92, 246, 0.45);
+            color: #fff;
+        }
+        .btn-primary.btn-glow:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.6);
+        }
+        /* Hero badge upgrade */
+        .promo-badge.glow-badge {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(217,70,239,0.08));
+            border-color: rgba(139,92,246,0.3);
+        }
+        .promo-badge.glow-badge .badge-tag {
+            background: linear-gradient(135deg, #6366f1, #d946ef);
+            color: white;
+        }
+        /* Logo icon glow on hover */
+        .logo-wrapper:hover .logo-icon-box {
+            filter: drop-shadow(0 0 8px rgba(139,92,246,0.7));
+        }
+        .logo-icon-box {
+            transition: filter 0.3s ease;
+        }
+    </style>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="theme-light">
+    <!-- Fine-grid lines (background effects) -->
+    <div class="grid-lines-bg"></div>
+
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo-wrapper" onclick="navigateTo('home')">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg logo-icon-box">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#6366f1"/>
+                            <stop offset="100%" stop-color="#d946ef"/>
+                        </linearGradient>
+                    </defs>
+                    <rect x="3" y="3" width="18" height="18" rx="4" stroke="url(#logoGrad)" stroke-width="2.5"/>
+                    <path d="M10 9L15 12L10 15V9Z" fill="url(#logoGrad)"/>
+                </svg>
+                <span class="logo-text logo-gradient">Vidlytics</span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#platform" onclick="navigateTo('platform')">Platform</a>
+                <a href="#workflows" onclick="navigateTo('workflows')">Workflows</a>
+                <a href="#developers" onclick="navigateTo('developers')">Developers</a>
+                <a href="#remotion" onclick="navigateTo('remotion')">Remotion</a>
+                <a href="#customers" onclick="navigateTo('customers')">Customers</a>
+                <a href="#pricing" onclick="navigateTo('pricing')">Pricing</a>
+                <a href="#security" onclick="navigateTo('security')">Security</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="#dashboard" class="btn btn-secondary" onclick="navigateTo('dashboard')">Open Dashboard</a>
+                <a href="#dashboard" class="btn btn-primary" onclick="navigateTo('dashboard')">Start for free</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="content-container">
+
+        <!-- 1. HOME / HERO SECTION -->
+        <section id="home-view" class="view-section active">
+            <div class="hero-wrapper">
+                <div class="promo-badge glow-badge">
+                    <span class="badge-tag">✨ New</span>
+                    <span class="badge-text">Orchestrate media analysis with AI-powered workflows →</span>
+                </div>
+                <h1 class="hero-title"><span class="hero-title-highlight">Vidlytics</span> — the video intelligence platform engineered for scale.</h1>
+                <p class="hero-subtitle">Vidlytics extracts audio, transcribes at sub-50ms latency, and structures transcripts into chapters, steps, and highlights automatically — powered by Groq & Gemini.</p>
+                
+                <div class="hero-actions">
+                    <a href="#dashboard" class="btn btn-primary btn-lg btn-glow" onclick="navigateTo('dashboard')">Start for free →</a>
+                    <a href="#workflows" class="btn btn-secondary btn-lg" onclick="navigateTo('workflows')">Watch demo</a>
+                </div>
+
+                <!-- Interactive Bento Mockup -->
+                <div class="hero-mockup-grid">
+                    <div class="mockup-card card-large">
+                        <div class="card-header">
+                            <span class="card-title">Live Pipeline Monitor</span>
+                            <span class="status-indicator-active">● Active</span>
+                        </div>
+                        <div class="mockup-bento-visual">
+                            <div class="mockup-pipeline-nodes">
+                                <div class="mock-node active">
+                                    <span class="node-icon">📥</span>
+                                    <span class="node-label">Ingest</span>
+                                </div>
+                                <div class="node-line-connector active"></div>
+                                <div class="mock-node active">
+                                    <span class="node-icon">⚙️</span>
+                                    <span class="node-label">Audio extract</span>
+                                </div>
+                                <div class="node-line-connector active"></div>
+                                <div class="mock-node active-pulse">
+                                    <span class="node-icon">🎙️</span>
+                                    <span class="node-label">Whisper (Groq)</span>
+                                </div>
+                                <div class="node-line-connector"></div>
+                                <div class="mock-node">
+                                    <span class="node-icon">🧠</span>
+                                    <span class="node-label">Gemini Summarize</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mockup-card card-small">
+                        <div class="card-header">
+                            <span class="card-title">API Key Provider</span>
+                        </div>
+                        <div class="api-toggle-container">
+                            <div class="toggle-row">
+                                <span>Platform Keys (Default)</span>
+                                <div class="toggle-switch active"></div>
+                            </div>
+                            <div class="toggle-row">
+                                <span>BYO custom credentials</span>
+                                <div class="toggle-switch"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mockup-card card-medium">
+                        <div class="card-header">
+                            <span class="card-title">Speed Latency Benchmarks</span>
+                        </div>
+                        <div class="chart-mockup">
+                            <div class="chart-bar-container">
+                                <span class="chart-label">Groq Turbo</span>
+                                <div class="chart-bar-outer"><div class="chart-bar-inner color-indigo" style="width: 90%;"></div></div>
+                                <span class="chart-value">0.8s</span>
+                            </div>
+                            <div class="chart-bar-container">
+                                <span class="chart-label">Standard API</span>
+                                <div class="chart-bar-outer"><div class="chart-bar-inner color-gray" style="width: 35%;"></div></div>
+                                <span class="chart-value">4.2s</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client Logos -->
+                <div class="logo-grid-section">
+                    <p class="logo-section-title">TRUSTED BY TEAMS RUNNING SCALE PIPELINES</p>
+                    <div class="logos-container">
+                        <span class="client-logo">⚡ railway</span>
+                        <span class="client-logo">▲ vercel</span>
+                        <span class="client-logo">🪐 supabase</span>
+                        <span class="client-logo">🍃 neon</span>
+                        <span class="client-logo">⚙️ inngest</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. PLATFORM SECTION -->
+        <section id="platform-view" class="view-section">
+            <div class="section-container">
+                <span class="section-tag">[01] POWERFUL PLATFORM</span>
+                <h2 class="section-heading">Built for the speed of AI agents.</h2>
+                <p class="section-subtext">The core platform handles raw files or external streams, compressing payloads client-side, transcribing with low latency, and running automated Gemini summaries.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="card-icon">⚡</div>
+                        <h3>ffmpeg.wasm Client Compression</h3>
+                        <p>Compress raw video streams into lightweight MP3 packets locally in the browser. Avoid transferring gigabytes of raw video files and accelerate ingestion times by 10x.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="card-icon">🔍</div>
+                        <h3>Dual-Coprocessor Fallback</h3>
+                        <p>Primary transcription executes on Groq's Whisper Large pipeline. If rate limits or timeouts occur, the stream automatically falls back to Gemini multimodal audio processing.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="card-icon">📊</div>
+                        <h3>Drizzle ORM & Postgres</h3>
+                        <p>Fully index and search key moments, transcripts, metadata, summaries, and API token billing limits with enterprise-ready schema indexation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. WORKFLOWS SECTION -->
+        <section id="workflows-view" class="view-section">
+            <div class="section-container">
+                <span class="section-tag">[02] VISUAL ORCHESTRATION</span>
+                <h2 class="section-heading">Connect your pipelines visually.</h2>
+                <p class="section-subtext">Construct conditional triggers, route transcription fallbacks, and fire automated developer webhooks upon media completion using our Attio-style builder.</p>
+                
+                <div class="workflow-builder-visual-wrapper">
+                    <!-- Sidebar Options -->
+                    <div class="workflow-sidebar">
+                        <span class="sidebar-title">Pipeline Triggers</span>
+                        <div class="sidebar-item draggable" data-type="trigger">🎥 Video Ingestion</div>
+                        <div class="sidebar-item draggable" data-type="trigger">📥 Inbound Webhook</div>
+                        
+                        <span class="sidebar-title">Coprocessor Nodes</span>
+                        <div class="sidebar-item draggable" data-type="node">🎙️ Groq Whisper</div>
+                        <div class="sidebar-item draggable" data-type="node">✨ Gemini Summarize</div>
+                        
+                        <span class="sidebar-title">Destinations</span>
+                        <div class="sidebar-item draggable" data-type="action">📡 Outbound Webhook</div>
+                        <div class="sidebar-item draggable" data-type="action">💾 Drizzle Database</div>
+                    </div>
+
+                    <!-- Workflow Grid Canvas -->
+                    <div class="workflow-canvas">
+                        <div class="canvas-grid-bg"></div>
+                        <div class="workflow-node-chain">
+                            <div class="workflow-canvas-node active">
+                                <div class="node-header">🎥 Ingestion Trigger</div>
+                                <div class="node-body">When file or URL is submitted</div>
+                                <div class="node-connector-out"></div>
+                            </div>
+                            
+                            <div class="workflow-canvas-arrow"></div>
+
+                            <div class="workflow-canvas-node active">
+                                <div class="node-header">🎙️ Transcription Coprocessor</div>
+                                <div class="node-body">Groq Whisper (Turbo)</div>
+                                <div class="node-status-success">✓ 0.8s</div>
+                                <div class="node-connector-in"></div>
+                                <div class="node-connector-out"></div>
+                            </div>
+
+                            <div class="workflow-canvas-arrow"></div>
+
+                            <div class="workflow-canvas-node active">
+                                <div class="node-header">✨ Summarization Engine</div>
+                                <div class="node-body">Gemini Multi-Modal API</div>
+                                <div class="node-connector-in"></div>
+                                <div class="node-connector-out"></div>
+                            </div>
+
+                            <div class="workflow-canvas-arrow"></div>
+
+                            <div class="workflow-canvas-node active-pulse">
+                                <div class="node-header">📡 Outbound Webhook</div>
+                                <div class="node-body">POST payload to developer URL</div>
+                                <div class="node-connector-in"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. DEVELOPERS SECTION (API & WEBHOOKS) -->
+        <section id="developers-view" class="view-section">
+            <div class="section-container">
+                <span class="section-tag">[03] DEVELOPER ENGINE</span>
+                <h2 class="section-heading">Integrate webhooks in minutes.</h2>
+                <p class="section-subtext">Video Analyzer enqueues serverless-friendly tasks. Listen to real-time events and update your DB via automated JSON POST callbacks.</p>
+                
+                <div class="developer-split-panel">
+                    <!-- Left: API Snippets & Webhook Config -->
+                    <div class="dev-panel-left">
+                        <div class="api-snippet-card">
+                            <div class="tabs-header">
+                                <button class="snippet-tab-btn active" onclick="switchSnippet('curl')">cURL</button>
+                                <button class="snippet-tab-btn" onclick="switchSnippet('python')">Python</button>
+                                <button class="snippet-tab-btn" onclick="switchSnippet('js')">Node.js</button>
+                            </div>
+                            <div class="snippet-body">
+                                <pre id="snippet-code-block" class="code-block"><code>curl -X POST https://api.vidlytics.dev/v1/analyze/url \
+  -H "Authorization: Bearer $API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "url": "https://www.youtube.com/watch?v=attio-gtm",
+    "webhook_url": "https://yoursite.com/webhooks/video"
+  }'</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Webhook sandbox simulator -->
+                        <div class="webhook-sandbox-card">
+                            <h3>Test Webhook Destination</h3>
+                            <p class="card-desc">Provide a local or test webhook destination below to monitor simulated server payload dispatches.</p>
+                            <div class="webhook-input-group">
+                                <input type="url" id="webhook-target-input" placeholder="https://api.yourdomain.com/webhooks" class="form-input">
+                                <button onclick="saveWebhookTarget()" class="btn btn-primary">Register URL</button>
+                            </div>
+                            <span id="webhook-save-status" class="input-success-msg"></span>
+                        </div>
+                    </div>
+
+                    <!-- Right: Webhook Live Stream Logger -->
+                    <div class="dev-panel-right">
+                        <div class="webhook-stream-card">
+                            <div class="stream-header">
+                                <span>LIVE WEBHOOK STREAM (SIMULATED)</span>
+                                <button onclick="clearWebhookStreamLogs()" class="btn-clear-stream">Clear logs</button>
+                            </div>
+                            <div class="stream-body" id="webhook-stream-container">
+                                <div class="stream-placeholder">Waiting for simulation triggers... Submit a video in the Dashboard to stream events in real time.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. REMOTION SECTION -->
+        <section id="remotion-view" class="view-section">
+            <div class="section-container">
+                <span class="section-tag">[04] VIDEO COMPOSITION</span>
+                <h2 class="section-heading">Remotion-rendered highlight reels.</h2>
+                <p class="section-subtext">Convert textual insights into shareable assets. Select quotes, rank moments via LLM criteria, and render vertical highlight clips programmatically.</p>
+                
+                <div class="remotion-showcase-panel">
+                    <div class="remotion-mock-player-wrapper">
+                        <div class="remotion-vertical-canvas">
+                            <div class="vertical-video-frame">
+                                <div class="rendered-video-mock-bg"></div>
+                                <div class="video-overlay-captions">
+                                    <p class="caption-time">00:25</p>
+                                    <p class="caption-text">"Intelligent GTM agents don't just log details..."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="remotion-details">
+                        <h3>Automatic Short-Form Video Rendering</h3>
+                        <p>Vidlytics uses Remotion to automatically composite audio segments, auto-rendered wave charts, dynamic captioned lines, and brand thumbnails into a single <code>.mp4</code> file.</p>
+                        <ul class="detail-bullets-list">
+                            <li><strong>Moment Selection:</strong> LLM selects segments based on energy and context weight.</li>
+                            <li><strong>Dynamic Waveforms:</strong> Visual audio waves synchronised directly to extracted voiceovers.</li>
+                            <li><strong>Vertical Compositing:</strong> Ready-to-share social formats (9:16 layout) generated at up to 60fps.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CUSTOMERS SECTION -->
+        <section id="customers-view" class="view-section">
+            <div class="section-container">
+                <span class="section-tag">[05] CLIENT STATS</span>
+                <h2 class="section-heading">The standard for modern GTM teams.</h2>
+                <p class="section-subtext">See how engineering teams integrate our video-to-knowledge pipeline to accelerate data parsing.</p>
+                
+                <div class="customer-quote-card">
+                    <div class="quote-text">
+                        "Vidlytics is a dev company's dream. It's the perfect platform to parse customer demos, identify intent, and feed structured data into our workflow logic."
+                    </div>
+                    <div class="quote-author-info">
+                        <div class="author-details">
+                            <span class="author-name">David Banys</span>
+                            <span class="author-role">Head of Product Marketing, Railway</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <span class="metric-number">1,000,000+</span>
+                        <span class="metric-label">API calls per week</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-number">100,000+</span>
+                        <span class="metric-label">MCP tasks executed monthly</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-number">6,000+</span>
+                        <span class="metric-label">Active summary pipelines</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-number">99.9%</span>
+                        <span class="metric-label">Uptime fallback SLA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. PRICING SECTION -->
+        <section id="pricing-view" class="view-section">
+            <div class="section-container">
+                <span class="section-tag">[06] TRANSPARENT PRICING</span>
+                <h2 class="section-heading">Simple pricing built to scale.</h2>
+                <p class="section-subtext">Choose a tier that fits your ingestion volume, or connect custom keys for usage-based API structures.</p>
+                
+                <div class="pricing-toggle-wrapper">
+                    <span>Monthly</span>
+                    <button class="pricing-toggle-btn" id="billing-cycle-toggle" onclick="toggleBillingCycle()">
+                        <div class="toggle-dot"></div>
+                    </button>
+                    <span>Yearly <span class="discount-pill">Save 20%</span></span>
+                </div>
+
+                <div class="pricing-cards-grid">
+                    <!-- Free Tier -->
+                    <div class="pricing-card">
+                        <h3>Starter</h3>
+                        <p class="card-desc">Ideal for small projects and initial sandbox test builds.</p>
+                        <div class="price-container">
+                            <span class="price-symbol">$</span>
+                            <span class="price-value" id="price-starter">0</span>
+                            <span class="price-period">/ month</span>
+                        </div>
+                        <ul class="card-features">
+                            <li>5 analyzed video uploads / month</li>
+                            <li>Standard Whisper transcription</li>
+                            <li>Bento Grid Dashboard access</li>
+                            <li>Community support resources</li>
+                        </ul>
+                        <button class="btn btn-secondary w-full" onclick="navigateTo('dashboard')">Start Free Sandbox</button>
+                    </div>
+
+                    <!-- Pro Tier -->
+                    <div class="pricing-card popular">
+                        <span class="popular-badge">Most Popular</span>
+                        <h3>Pro Ingest</h3>
+                        <p class="card-desc">Perfect for growing product teams automating marketing feeds.</p>
+                        <div class="price-container">
+                            <span class="price-symbol">$</span>
+                            <span class="price-value" id="price-pro">49</span>
+                            <span class="price-period">/ month</span>
+                        </div>
+                        <ul class="card-features">
+                            <li>100 analyzed uploads / month</li>
+                            <li>Groq sub-second Whisper + Gemini Fallback</li>
+                            <li>Full Webhook & API Endpoint keys</li>
+                            <li>Remotion Vertical Clip outputs (15 renders/mo)</li>
+                            <li>Priority system support ticket resolution</li>
+                        </ul>
+                        <button class="btn btn-primary w-full" onclick="navigateTo('dashboard')">Upgrade to Pro</button>
+                    </div>
+
+                    <!-- Enterprise Tier -->
+                    <div class="pricing-card">
+                        <h3>Enterprise</h3>
+                        <p class="card-desc">Custom plans matching high volume pipelines.</p>
+                        <div class="price-container">
+                            <span class="price-value" style="font-size: 2.2rem;">Custom</span>
+                        </div>
+                        <ul class="card-features">
+                            <li>Unlimited Ingest & processing channels</li>
+                            <li>Custom Webhook integrations</li>
+                            <li>Dedicated worker cluster instances</li>
+                            <li>BYO-API Keys usage capabilities</li>
+                            <li>24/7 technical developer SLA</li>
+                        </ul>
+                        <button class="btn btn-secondary w-full" onclick="navigateTo('dashboard')">Contact Developer Sales</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. SECURITY SECTION -->
+        <section id="security-view" class="view-section">
+            <div class="section-container">
+                <span class="section-tag">[07] GOVERNANCE & SECURITY</span>
+                <h2 class="section-heading">Enterprise compliance, out of the box.</h2>
+                <p class="section-subtext">Your media data remains protected. Rest assured with fully compliant retention protocols, local credential encryption, and secure APIs.</p>
+                
+                <div class="security-features-grid">
+                    <div class="security-card">
+                        <div class="sec-icon">✓</div>
+                        <h3>ISO 27001 Certified</h3>
+                        <p>Fully compliant with industry standards tracking secure information logs.</p>
+                    </div>
+                    <div class="security-card">
+                        <div class="sec-icon">✓</div>
+                        <h3>GDPR & CCPA Compliant</h3>
+                        <p>Full control over your uploaded assets. Request data purge at any point.</p>
+                    </div>
+                    <div class="security-card">
+                        <div class="sec-icon">✓</div>
+                        <h3>Credential Vaulting</h3>
+                        <p>When providing your own Groq or Gemini API keys, values are stored encrypted client-side.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. DASHBOARD SECTION (THE MAIN APP) -->
+        <section id="dashboard-view" class="view-section">
+            <div class="dashboard-layout">
+                
+                <!-- Left Sidebar: List of videos and actions -->
+                <div class="dash-sidebar">
+                    <div class="sidebar-header">
+                        <h2>Workspace Videos</h2>
+                        <button class="btn-refresh" onclick="fetchVideosList()">↻</button>
+                    </div>
+
+                    <!-- paste URL quick action -->
+                    <div class="quick-action-box">
+                        <h3>Ingest New Video</h3>
+                        <div class="input-tabs">
+                            <button class="tab-select active" id="tab-url-btn" onclick="setIngestTab('url')">URL Ingest</button>
+                            <button class="tab-select" id="tab-upload-btn" onclick="setIngestTab('upload')">MP4 Upload</button>
+                        </div>
+
+                        <!-- URL Ingest form -->
+                        <div id="ingest-url-form" class="ingest-form active">
+                            <input type="url" id="ingest-video-url" placeholder="Paste YouTube URL here..." class="form-input">
+                            <button onclick="submitURLForAnalysis()" class="btn btn-primary btn-sm w-full mt-2">Queue Pipeline</button>
+                        </div>
+
+                        <!-- MP4 Upload form -->
+                        <div id="ingest-upload-form" class="ingest-form">
+                            <div class="file-drag-zone" id="drag-drop-zone">
+                                <span class="drag-icon">📥</span>
+                                <span class="drag-text">Drag .mp4 here or click</span>
+                                <input type="file" id="file-uploader-input" accept="video/mp4" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Past analyses list -->
+                    <div class="videos-list" id="dashboard-videos-list">
+                        <div class="list-spinner">Loading videos...</div>
+                    </div>
+                </div>
+
+                <!-- Right Area: Bento Dashboard & Detail modal replacement -->
+                <div class="dash-main-area" id="dashboard-main-content">
+                    
+                    <!-- EMPTY STATE / GRID VIEW -->
+                    <div id="dashboard-grid-view" class="active">
+                        <div class="dash-bento-grid">
+                            
+                            <div class="bento-tile tile-large">
+                                <div class="tile-header">
+                                    <h3>Pipeline Status Dashboard</h3>
+                                    <span class="active-badge">Live Monitor</span>
+                                </div>
+                                <div class="bento-pipeline-details">
+                                    <div class="stat-large">
+                                        <span id="stat-total-count">0</span>
+                                        <label>Total Analyses</label>
+                                    </div>
+                                    <div class="stat-breakdown">
+                                        <div class="breakdown-item"><span class="pill pill-done">Completed</span><span id="stat-done-count">0</span></div>
+                                        <div class="breakdown-item"><span class="pill pill-process">Processing</span><span id="stat-processing-count">0</span></div>
+                                        <div class="breakdown-item"><span class="pill pill-failed">Failed</span><span id="stat-failed-count">0</span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bento-tile tile-medium">
+                                <div class="tile-header">
+                                    <h3>Active Fallback Status</h3>
+                                </div>
+                                <div class="fallback-status-card">
+                                    <div class="fallback-row">
+                                        <span class="coproc-name">Groq Whisper (Turbo)</span>
+                                        <span class="status-indicator online">● Online</span>
+                                    </div>
+                                    <div class="fallback-row">
+                                        <span class="coproc-name">Gemini Audio Fallback</span>
+                                        <span class="status-indicator online">● Ready</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bento-tile tile-small">
+                                <div class="tile-header">
+                                    <h3>API Usage Limit</h3>
+                                </div>
+                                <div class="usage-meter">
+                                    <div class="meter-bar">
+                                        <div class="meter-fill" style="width: 24%;"></div>
+                                    </div>
+                                    <span class="meter-text">24 / 100 Analyses remaining</span>
+                                </div>
+                            </div>
+
+                            <div class="bento-tile tile-wide select-video-prompt-tile">
+                                <div class="select-prompt-container">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="select-prompt-svg">
+                                        <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M10 9L15 12L10 15V9Z" fill="currentColor"/>
+                                    </svg>
+                                    <h3>Select a video from the list or ingest a new one to view details</h3>
+                                    <p>Get full TL;DR summaries, searchable timestamped transcripts, chapters, and generate Remotion vertical highlight clips.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- INDIVIDUAL VIDEO DETAIL VIEW -->
+                    <div id="dashboard-detail-view">
+                        <!-- Header with video info -->
+                        <div class="detail-header">
+                            <button class="btn-back" onclick="closeVideoDetail()">← Back to Overview</button>
+                            <div class="detail-meta">
+                                <h2 id="detail-video-title">Video title loading...</h2>
+                                <span class="video-source-badge" id="detail-video-source">URL</span>
+                            </div>
+                        </div>
+
+                        <!-- Main Split View -->
+                        <div class="detail-split-container">
+                            <!-- Left panel: Player and synced transcript -->
+                            <div class="detail-left">
+                                <div class="player-wrapper">
+                                    <div class="mock-player-box">
+                                        <div class="player-icon">🎬</div>
+                                        <p id="player-status-text">Video Player Simulation</p>
+                                        <div class="player-progress">
+                                            <span class="current-time" id="player-current-time">00:00</span>
+                                            <div class="progress-bar-slider" onclick="seekPlayer(event)" id="player-progress-bar">
+                                                <div class="progress-bar-fill" id="player-progress-fill"></div>
+                                            </div>
+                                            <span class="total-duration" id="player-total-duration">00:00</span>
+                                        </div>
+                                        <div class="player-controls">
+                                            <button onclick="togglePlayerPlayback()" class="btn-play" id="btn-player-play">Play</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Synced transcript scroll -->
+                                <div class="synced-transcript-container">
+                                    <h3>Interactive Transcript</h3>
+                                    <div class="transcript-search-group">
+                                        <input type="text" id="transcript-search-input" onkeyup="filterTranscript()" placeholder="Search in transcript..." class="form-input">
+                                    </div>
+                                    <div class="transcript-sentences-scroll" id="detail-transcript-sentences">
+                                        <!-- Sentences generated by JS -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right panel: Tabs with details -->
+                            <div class="detail-right">
+                                <div class="detail-tabs">
+                                    <button class="detail-tab-btn active" onclick="switchDetailTab('summary')">Summary</button>
+                                    <button class="detail-tab-btn" onclick="switchDetailTab('steps')">Steps Explained</button>
+                                    <button class="detail-tab-btn" onclick="switchDetailTab('chapters')">Chapters</button>
+                                    <button class="detail-tab-btn" onclick="switchDetailTab('remotion-render')">Remotion Studio</button>
+                                </div>
+
+                                <div class="tab-content active" id="tab-content-summary">
+                                    <div class="summary-tldr-card">
+                                        <h4>TL;DR</h4>
+                                        <p id="detail-tldr-text">TL;DR content here</p>
+                                    </div>
+                                    <div class="key-quotes-box">
+                                        <h4>Key Quotes</h4>
+                                        <ul class="quotes-list" id="detail-quotes-list">
+                                            <!-- Quotes loaded dynamically -->
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="tab-content" id="tab-content-steps">
+                                    <div class="steps-list-wrapper" id="detail-steps-list">
+                                        <!-- Steps loaded dynamically -->
+                                    </div>
+                                </div>
+
+                                <div class="tab-content" id="tab-content-chapters">
+                                    <div class="chapters-timeline-wrapper" id="detail-chapters-timeline">
+                                        <!-- Chapters loaded dynamically -->
+                                    </div>
+                                </div>
+
+                                <div class="tab-content" id="tab-content-remotion-render">
+                                    <div class="remotion-render-panel">
+                                        <h3>Generate Vertical Highlight Clip</h3>
+                                        <p>Utilize serverless rendering to cut, caption, and composite dynamic summaries of top moments.</p>
+                                        
+                                        <div class="remotion-action-box">
+                                            <button onclick="triggerRemotionRender()" class="btn btn-primary" id="btn-start-render">Generate Remotion Clip</button>
+                                            <div class="render-progress-container" id="render-progress-bar-wrapper" style="display: none;">
+                                                <div class="render-bar-outer"><div class="render-bar-inner" id="render-bar-fill"></div></div>
+                                                <span class="render-status-text" id="render-status-message">Queuing renderer...</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="rendered-output-card" id="rendered-output-video-card" style="display: none;">
+                                            <div class="success-icon">✓ Output Render Complete</div>
+                                            <p>Your short vertical caption video is ready for distribution.</p>
+                                            <div class="rendered-video-thumbnail">
+                                                <span>📱 Rendered Vertical Output</span>
+                                            </div>
+                                            <a href="#" class="btn btn-secondary btn-sm" download>Download highlight.mp4</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo-wrapper">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="footerLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6366f1"/>
+                                <stop offset="100%" stop-color="#d946ef"/>
+                            </linearGradient>
+                        </defs>
+                        <rect x="3" y="3" width="18" height="18" rx="4" stroke="url(#footerLogoGrad)" stroke-width="2.5"/>
+                        <path d="M10 9L15 12L10 15V9Z" fill="url(#footerLogoGrad)"/>
+                    </svg>
+                    <span class="logo-gradient">Vidlytics</span>
+                </a>
+                <p class="brand-subtext">AI-powered video intelligence platform built for modern GTM workflows.</p>
+            </div>
+            
+            <div class="footer-links-grid">
+                <div class="links-column">
+                    <h4>Platform</h4>
+                    <a href="#platform" onclick="navigateTo('platform')">Video Ingestion</a>
+                    <a href="#workflows" onclick="navigateTo('workflows')">Workflow Builder</a>
+                    <a href="#remotion" onclick="navigateTo('remotion')">Remotion Captions</a>
+                </div>
+                <div class="links-column">
+                    <h4>Developers</h4>
+                    <a href="#developers" onclick="navigateTo('developers')">API Reference</a>
+                    <a href="#developers" onclick="navigateTo('developers')">Webhooks</a>
+                    <a href="#security" onclick="navigateTo('security')">Vault Security</a>
+                </div>
+                <div class="links-column">
+                    <h4>Pricing</h4>
+                    <a href="#pricing" onclick="navigateTo('pricing')">Starter Plan</a>
+                    <a href="#pricing" onclick="navigateTo('pricing')">Pro Ingest</a>
+                    <a href="#pricing" onclick="navigateTo('pricing')">Enterprise Tiers</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Vidlytics Inc. All rights reserved.</span>
+            <div class="footer-privacy">
+                <a href="#security" onclick="navigateTo('security')">Services Agreement</a>
+                <a href="#security" onclick="navigateTo('security')">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App JavaScript -->
+    <script src="/js/app.js"></script>
+</body>
+</html>

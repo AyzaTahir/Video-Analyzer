@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pydantic
+python-dotenv
+python-multipart
+aiofiles
+jinja2
+groq
+google-generativeai
+yt-dlp
+requests
